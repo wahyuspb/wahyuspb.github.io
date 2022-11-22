@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#317EFB">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-32x32.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-192x192.png" sizes="192x192">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-160x160.png" sizes="160x160">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-96x96.png" sizes="96x96">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-16x16.pn" sizes="16x16">
+
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" type="text/css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TNJDJLX');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- SEO Plugin -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to create slim Spring Boot docker images | Wahyu Suryo Putro Bayu</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="How to create slim Spring Boot docker images" />
+<meta name="author" content="Wahyu Suryo Putro Bayu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to create slim docker images for running your Spring Boot applications" />
+<meta property="og:description" content="How to create slim docker images for running your Spring Boot applications" />
+<link rel="canonical" href="http://localhost:4000/blog/creating-slim-spring-boot-images" />
+<meta property="og:url" content="http://localhost:4000/blog/creating-slim-spring-boot-images" />
+<meta property="og:site_name" content="Wahyu Suryo Putro Bayu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-04-13T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to create slim Spring Boot docker images" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Wahyu Suryo Putro Bayu"},"dateModified":"2022-04-13T00:00:00+07:00","datePublished":"2022-04-13T00:00:00+07:00","description":"How to create slim docker images for running your Spring Boot applications","headline":"How to create slim Spring Boot docker images","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/creating-slim-spring-boot-images"},"url":"http://localhost:4000/blog/creating-slim-spring-boot-images"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body class="d-flex flex-column h-100">
+
+  <main class="flex-shrink-0 container mt-5">
+  <nav class="navbar navbar-expand-lg navbar-light">
+
+  <a class="navbar-brand" href="/"><h5><b>Wahyu Suryo Putro Bayu</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/404.html"></a>
+
+      <a class="nav-item nav-link active" href="/"></a>
+
+      <a class="nav-item nav-link " href="/blog/tags"></a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link " href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/contact/">Contact Me</a>
+
+      
+
+    </div>
+  </div>
+
+</nav>
+  <div class="col-lg-10 mx-auto mt-5 post">
+  <h1><b>How to create slim Spring Boot docker images</b></h1>
+
+<p class="post-metadata text-muted">
+  13 April 2022 -  
+  <b>4 mins read time</b>
+
+  <br>Tags: 
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#java">
+      <span class="tag badge badge-pill text-primary border border-primary">Java</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#technology">
+      <span class="tag badge badge-pill text-primary border border-primary">Technology</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#docker">
+      <span class="tag badge badge-pill text-primary border border-primary">Docker</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#spring">
+      <span class="tag badge badge-pill text-primary border border-primary">Spring</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#spring-boot">
+      <span class="tag badge badge-pill text-primary border border-primary">Spring-Boot</span>
+    </a>
+    </p>
+
+<p>In this post, I will explain how you can create slim docker images by creating customized JREs using <code class="language-plaintext highlighter-rouge">jlink</code> and <code class="language-plaintext highlighter-rouge">jmods</code>.</p>
+
+<p>Those commands are present on JDKs since Java 9, but actually being mature enough since Java 11, they bring a new way to create your customized JRE with only the modules that you need from Java, and then, creating smaller Docker images to run your Java applications (Mainly focused in Spring Boot applications), saving some good bucks in your Container Repository application (ECR, Artifactory, Docker Hub).</p>
+
+<h2 id="but-how-do-we-start">But, how do we start?</h2>
+
+<p>Assuming you already have a JDK installed in your machine, if not, i strongly suggest you to use <a href="https://sdkman.io/">sdkman.io</a> and install Java 17 version (Which is the latest LTS as of the date of this post)</p>
+
+<p>First of all, we need to get the list produced from <code class="language-plaintext highlighter-rouge">jdeps</code> based in your jarfile from Spring Boot, for example:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>jdeps <span class="nt">--list-deps</span> <span class="nt">--ignore-missing-deps</span>  your-fat-jar.jar
+   java.base
+   java.logging
+</code></pre></div></div>
+
+<p>Well, that doesn’t seems right, huh?</p>
+
+<p>Spring Boot has a strategy by default to generate a fat jar with all the needed dependencies inside of it, and <code class="language-plaintext highlighter-rouge">jdeps</code> currently can’t get all the dependencies recursively inside the jars from the fat-jar.</p>
+
+<p>So, what you can do is to extract all the contents from the fat-jar and run jdeps against every jar in the <code class="language-plaintext highlighter-rouge">lib</code> folder.</p>
+
+<p>Or, you can try with try and error, and see which ClassNotFoundException you will get from each JRE version</p>
+
+<p>But, from some previous experience, we usually need those packages in our minimal JRE:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java.compiler
+java.logging
+java.sql
+java.rmi
+java.naming
+java.management
+java.instrument
+java.security.jgss
+java.net.http
+jdk.httpserver
+jdk.naming.dns
+</code></pre></div></div>
+
+<p>But my suggestion is to try yourself and see which packages you will really need in your slim JRE</p>
+
+<h2 id="creating-my-java-slim-jre">Creating my Java slim JRE</h2>
+
+<p>You can use <code class="language-plaintext highlighter-rouge">jlink</code> locally to create your customized JRE, the command is somehow like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jlink <span class="se">\</span>
+    <span class="nt">--module-path</span> <span class="s2">"</span><span class="nv">$JAVA_HOME</span><span class="s2">/jmods"</span> <span class="se">\</span>
+    <span class="nt">--add-modules</span> <span class="o">[</span>the java modules your application needs joined by ,]] <span class="se">\</span>
+    <span class="nt">--verbose</span> <span class="se">\</span>
+    <span class="nt">--strip-debug</span> <span class="se">\</span>
+    <span class="nt">--compress</span> 2 <span class="se">\</span>
+    <span class="nt">--no-header-files</span> <span class="se">\</span>
+    <span class="nt">--no-man-pages</span> <span class="se">\</span>
+    <span class="nt">--output</span> /opt/jre-minimal
+</code></pre></div></div>
+
+<p>Explaining each flag:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--module-path &lt;path&gt;              Module path.
+                                        If not specified, the JDKs jmods directory
+                                        will be used, if it exists. If specified,
+                                        but it does not contain the java.base module,
+                                        the JDKs jmods directory will be added,
+                                        if it exists.
+
+--verbose                         Enable verbose tracing
+
+--strip-debug                     Strip debug information
+
+--compress=&lt;0|1|2&gt;                Enable compression of resources:
+                                          Level 0: No compression
+                                          Level 1: Constant string sharing
+                                          Level 2: ZIP
+
+--no-header-files                 Exclude include header files
+
+--no-man-pages                    Exclude man pages
+
+--output &lt;path&gt;                   Location of output path
+</code></pre></div></div>
+
+<p>You can get those informations as well by running <code class="language-plaintext highlighter-rouge">jlinks --help</code> in your command line tool.</p>
+
+<h2 id="but-then-how-do-i-create-my-slim-spring-boot-application-docker-image">But then, how do I create my slim Spring Boot application docker image</h2>
+
+<p>Well, take this as an example, as i mentioned, it’s using the OpenJDK 17 version (Latest LTS by the time this post was written)</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build our minimal JRE using jlink</span>
+
+<span class="k">FROM</span><span class="s"> openjdk:17 as builder</span>
+
+<span class="k">USER</span><span class="s"> root</span>
+
+<span class="k">RUN </span>jlink <span class="se">\
+</span>    <span class="nt">--module-path</span> <span class="s2">"</span><span class="nv">$JAVA_HOME</span><span class="s2">/jmods"</span> <span class="se">\
+</span>    <span class="nt">--add-modules</span> java.compiler,java.sql,java.naming,java.management,java.instrument,java.rmi,java.desktop,jdk.internal.vm.compiler.management,java.xml.crypto,java.scripting,java.security.jgss,jdk.httpserver,java.net.http,jdk.naming.dns,jdk.crypto.cryptoki,jdk.unsupported <span class="se">\
+</span>    <span class="nt">--verbose</span> <span class="se">\
+</span>    <span class="nt">--strip-debug</span> <span class="se">\
+</span>    <span class="nt">--compress</span> 2 <span class="se">\
+</span>    <span class="nt">--no-header-files</span> <span class="se">\
+</span>    <span class="nt">--no-man-pages</span> <span class="se">\
+</span>    <span class="nt">--output</span> /opt/jre-minimal
+
+<span class="k">USER</span><span class="s"> app</span>
+
+<span class="c"># Now it is time for us to build our real image on top of an slim debian image</span>
+
+<span class="k">FROM</span><span class="s"> bitnami/minideb:bullseye</span>
+
+<span class="c"># Copy the JRE created in the last step into our $JAVA_HOME</span>
+
+<span class="k">COPY</span><span class="s"> --from=builder /opt/jre-minimal $JAVA_HOME</span>
+
+<span class="c"># For gradle</span>
+<span class="c"># COPY build/libs/app.jar app.jar</span>
+
+<span class="c"># For maven</span>
+<span class="c"># COPY target/app.jar app.jar</span>
+
+
+<span class="k">ENTRYPOINT</span><span class="s"> ["java","-jar","/app.jar"]</span>
+</code></pre></div></div>
+
+<p>But, how efficient is this?</p>
+
+<p>For example, in a regular spring boot application, it saved 200Mb of storage for every image generated, from <code class="language-plaintext highlighter-rouge">543.03</code> to <code class="language-plaintext highlighter-rouge">349.98</code>, assuming that you always have 10 versions of your application in your container registry, you can save <strong>2</strong> GB of storage space for each application!</p>
+
+
+
+
+</div>
+  </main>
+
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Wahyu Suryo Putro Bayu</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="https://www.github.com/wahyuspb"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-2x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/wahyuspb"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-2x"></i>
+    </a>
+
+</div>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script async defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+</body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNJDJLX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+</html>

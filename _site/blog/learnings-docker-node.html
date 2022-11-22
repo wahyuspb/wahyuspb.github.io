@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<!--
+  portfolYOU Jekyll theme by Youssef Raafat
+  Free for personal and commercial use under the MIT license
+  https://github.com/YoussefRaafatNasry/portfolYOU
+-->
+
+<html lang="en" class="h-100">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#317EFB">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-32x32.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-192x192.png" sizes="192x192">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-160x160.png" sizes="160x160">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-96x96.png" sizes="96x96">
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-16x16.pn" sizes="16x16">
+
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.0/css/all.css">
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" type="text/css"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TNJDJLX');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- SEO Plugin -->
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Learning from using Docker and Node - EXDEV Error | Wahyu Suryo Putro Bayu</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Learning from using Docker and Node - EXDEV Error" />
+<meta name="author" content="Wahyu Suryo Putro Bayu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Possible problems by using Node and NPM inside a Docker image" />
+<meta property="og:description" content="Possible problems by using Node and NPM inside a Docker image" />
+<link rel="canonical" href="http://localhost:4000/blog/learnings-docker-node" />
+<meta property="og:url" content="http://localhost:4000/blog/learnings-docker-node" />
+<meta property="og:site_name" content="Wahyu Suryo Putro Bayu" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-12T00:00:00+07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Learning from using Docker and Node - EXDEV Error" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Wahyu Suryo Putro Bayu"},"dateModified":"2021-08-12T00:00:00+07:00","datePublished":"2021-08-12T00:00:00+07:00","description":"Possible problems by using Node and NPM inside a Docker image","headline":"Learning from using Docker and Node - EXDEV Error","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/learnings-docker-node"},"url":"http://localhost:4000/blog/learnings-docker-node"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body class="d-flex flex-column h-100">
+
+  <main class="flex-shrink-0 container mt-5">
+  <nav class="navbar navbar-expand-lg navbar-light">
+
+  <a class="navbar-brand" href="/"><h5><b>Wahyu Suryo Putro Bayu</b></h5></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto"><a class="nav-item nav-link " href="/404.html"></a>
+
+      <a class="nav-item nav-link active" href="/"></a>
+
+      <a class="nav-item nav-link " href="/blog/tags"></a>
+
+      <a class="nav-item nav-link " href="/about/">About</a>
+
+      <a class="nav-item nav-link " href="/projects/">Projects</a>
+
+      <a class="nav-item nav-link " href="/contact/">Contact Me</a>
+
+      
+
+    </div>
+  </div>
+
+</nav>
+  <div class="col-lg-10 mx-auto mt-5 post">
+  <h1><b>Learning from using Docker and Node - EXDEV Error</b></h1>
+
+<p class="post-metadata text-muted">
+  12 August 2021 -  
+  <b>less than 1 min read time</b>
+
+  <br>Tags: 
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#docker">
+      <span class="tag badge badge-pill text-primary border border-primary">Docker</span>
+    </a>
+    
+    <a class="text-decoration-none no-underline" href="/blog/tags#technology">
+      <span class="tag badge badge-pill text-primary border border-primary">Technology</span>
+    </a>
+    </p>
+
+<p>As part of a gig, i had to work with Dockerfile that install and build a Node project (Angular 9+).</p>
+
+<p>Today in this post, i’ll try to share my challenges and more painful discoveries while trying to make this project to work with Node and Docker.</p>
+
+<p>Here is the list!</p>
+
+<h2 id="exdev--cross-device-link-not-permitted">EXDEV : cross-device link not permitted</h2>
+
+<p>If you try to update or install any npm dependency in an image that already have npm installed (any node images)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run node:latest npm install/update -g npm
+</code></pre></div></div>
+
+<p>You will probably experience this error.</p>
+
+<p>Being more specific, this errors happens whenever NPM tries to use <code class="language-plaintext highlighter-rouge">fs.rename</code>.</p>
+
+<p>A smart and clever solution, found by @nordluf on <a href="https://github.com/npm/npm/issues/9863">github</a> is this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RUN mv ./node_modules ./node_modules.tmp \
+  &amp;&amp; mv ./node_modules.tmp ./node_modules \
+  &amp;&amp; npm install 
+</code></pre></div></div>
+
+<p>The solution is kind of “hacky” but makes sense after all. The problem happens inside the filesystem for Docker. Docker filesystem is layered, and the union of those layers gives the complete picture of the Docker’s image filesystem.</p>
+
+<p>When you try to use <code class="language-plaintext highlighter-rouge">fs.rename</code> on this filesystem, Docker tries to copy all the data that it wants to use to the current layer from the read-only layer to perform the <code class="language-plaintext highlighter-rouge">fs.rename</code>. And since the operation require data from another read-only layer below and recursively, this is a very expensive operation.</p>
+
+<p>Then, Docker aborts the operation throwing an EXDEV error, and since your application does not know how to handle this error, it ends up.</p>
+
+<h2 id="containers-are-stateless-and-have-ephemeral-storage">Containers are stateless and have ephemeral storage!</h2>
+
+<p>Docker containers don’t keep state, and if you want to move from A to B, you will potentially lose any changes done to the container.</p>
+
+<p>You should always try to commit any container required files to the code repository, or generate them during the build time of the image.</p>
+
+<p>If you need to have sensitive information, try to use ENV variables.</p>
+
+
+
+
+</div>
+  </main>
+
+  <footer class="mt-auto py-3 text-center">
+
+  <small class="text-muted mb-2">
+    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+    by <strong>Wahyu Suryo Putro Bayu</strong>
+  </small>
+
+  <div class="container-fluid justify-content-center"><a class="social mx-1"  href="https://www.github.com/wahyuspb"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#333333'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-github fa-2x"></i>
+    </a><a class="social mx-1"  href="https://www.linkedin.com/in/wahyuspb"
+       style="color: #6c757d"
+       onMouseOver="this.style.color='#007bb5'"
+       onMouseOut="this.style.color='#6c757d'">
+      <i class="fab fa-linkedin-in fa-2x"></i>
+    </a>
+
+</div>
+
+</footer>
+
+  
+  <!-- GitHub Buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- jQuery CDN -->
+<script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper.js CDN -->
+<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS CDN -->
+<script async defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- wow.js CDN & Activation -->
+<script async defer src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
+
+<!-- Initialize all tooltips -->
+<script>
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+</body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNJDJLX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+</html>
