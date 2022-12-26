@@ -39,7 +39,7 @@ Check out my [portfolio](/projects) to see iPython notebooks and Github repos fo
 
 And that's about it! Feel free to connect on [LinkedIn](https://www.linkedin.com/in/wahyuspb) or get in touch if you want to discuss opportunities, collaboration, consulting or have a heated debate about the best Tea in Indonesia. I'm always happy to chat!
 
-You can find a contact form on the [Contact Me](/contact), or send an email directly to <a href="mailto:wahyuspb.id@gmail.com.com">wahyuspb.id@gmail.com.com</a>.
+You can find a contact form on the [Contact Me](/contact), or send an email directly to <a href="mailto:wahyuspb.id@gmail.com">wahyuspb.id@gmail.com</a>.
 
 
 Thanks for reading!
