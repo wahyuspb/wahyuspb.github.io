@@ -779,7 +779,7 @@ for label,x,y in zip(rets.columns,rets.mean(),rets.std()):
 ```
 
 
-![png](/public/project-images/tech_stock_analysis/output_46_0.png)
+![png](/images/projects/tech_stock_analysis/output_46_0.png)
 
 
 We'd want a stock to have a high expected return and a low risk; Google and Microsoft seem to be the safe options for that. Meanwhile, Yahoo and Amazon stocks have higher expected returns, but also have a higher risk
