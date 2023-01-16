@@ -261,7 +261,7 @@ pd.scatter_matrix(data, alpha = 0.3, figsize = (14,8), diagonal = 'kde');
 ```
 
 
-![png](/images/project/customer_segments/output_13_0.png)
+![png](/images/projects/customer_segments/output_13_0.png)
 
 
 #### Correlations
