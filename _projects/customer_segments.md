@@ -297,7 +297,7 @@ pd.scatter_matrix(log_data, alpha = 0.3, figsize = (14,8), diagonal = 'kde');
 ```
 
 
-![png](/images/project/customer_segments/output_17_0.png)
+![png](/images/projects/customer_segments/output_17_0.png)
 
 
 ### Observation
@@ -999,7 +999,7 @@ pca_results = vs.pca_results(good_data, pca)
 ```
 
 
-![png](/images/project/customer_segments/output_26_0.png)
+![png](/images/projects/customer_segments/output_26_0.png)
 
 
 The first and second features, in total, explain approx. 70.8% of the variance in our data.
@@ -1144,7 +1144,7 @@ vs.biplot(good_data, reduced_data, pca)
 
 
 
-![png](/images/project/customer_segments/output_35_1.png)
+![png](/images/projects/customer_segments/output_35_1.png)
 
 
 Once we have the original feature projections (in red), it is easier to interpret the relative position of each data point in the scatterplot. For instance, a point the lower right corner of the figure will likely correspond to a customer that spends a lot on `'Milk'`, `'Grocery'` and `'Detergents_Paper'`, but not so much on the other product categories. 
@@ -1220,7 +1220,7 @@ vs.cluster_results(reduced_data, preds, centers, pca_samples)
 ```
 
 
-![png](/images/project/customer_segments/output_43_0.png)
+![png](/images/projects/customer_segments/output_43_0.png)
 
 
 ### Data Recovery
